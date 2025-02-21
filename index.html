@@ -25,6 +25,8 @@
     <!-- Scripts -->
     <script>
 
+        let logueoExitoso = true;
+
         // Sistema de Secciones Dinámicas
         const sections = {
             login,
@@ -51,7 +53,13 @@
         });
 
         // Cargar sección inicial
-        loadSection('dashboard');
+        if (logueoExitoso) {
+            
+            loadSection('dashboard');
+        } else {
+            loadSection('login');
+            
+        }
 
 
     </script>

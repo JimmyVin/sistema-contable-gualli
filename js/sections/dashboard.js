@@ -17,7 +17,8 @@ const dashboard = `
                     <li><a>Reportes</a></li>
                     <li><a>Por Pagar</a></li>
                     <li><a>Por Cobrar</a></li>
-                    <li><a>Inventario</a></li>
+                    <li><a onclick="loadSectionDahsboard('inventario')">Inventario</a></li>
+                    
                 </ul>
             </div>
             <a class="btn btn-ghost text-xl">Sistema Contable</a>
@@ -52,3 +53,26 @@ const dashboard = `
 
 
 `;
+
+// Sistema de Secciones Dinámicas
+const sectionsDashboard = {
+    inventario,
+};
+
+// Cargar Sección
+function loadSectionDahsboard(sectionName) {
+    const container = document.getElementById('section-container');
+    container.innerHTML = sectionsDashboard[sectionName];
+
+    // Actualizar enlaces activos
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.dataset.section === sectionName);
+    });
+}
+
+// Event Listeners para navegación
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        loadSection(link.dataset.section);
+    });
+});
