@@ -1,3 +1,10 @@
+  // Importa los módulos necesarios de Firebase
+  import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore-lite.js';
+  import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-storage.js';
+
+  // Importa otros servicios de Firebase según tus necesidades
+
+  // Configuración de Firebase proporcionada en la consola
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -16,3 +23,4 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
